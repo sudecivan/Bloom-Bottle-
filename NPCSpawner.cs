@@ -9,7 +9,7 @@ public class NPCSpawner : MonoBehaviour
     public Transform disappearPoint;
     public List<Transform> pathPoints;
     public ConversationManager conversationManager;
-    public GameObject talkPromptUI;  // Reference to the talk prompt UI
+    public GameObject talkPromptUI;  
 
     public float spawnDelay = 1f;
 
@@ -41,7 +41,7 @@ public class NPCSpawner : MonoBehaviour
         npc.pathPoints = new List<Transform> (pathPoints);
         npc.stopPoint = stopPoint;
         npc.disappearPoint = disappearPoint; 
-        Debug.Log($"Assigned {npc.pathPoints.Count} path points to {npc.name}"); // assign your scene points
+        Debug.Log($"Assigned {npc.pathPoints.Count} path points to {npc.name}"); 
         npc.conversationManager = conversationManager;
         npc.talkPromptUI = talkPromptUI;
         npc.StartPath(OnNPCFinished);
