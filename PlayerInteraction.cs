@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     public TextMeshProUGUI interactionText;
     
 
-    // Update is called once per frame
+    
     void Update()
     {
         InteractionRay();
