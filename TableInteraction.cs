@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class TableInteraction : MonoBehaviour
 {
-    public GameObject pressETextUI;     // Assign your 'Press E' UI Text
-    public Canvas craftingCanvas;       // Assign the Canvas to show on interaction
+    public GameObject pressETextUI;     
+    public Canvas craftingCanvas;       
 
     private bool isPlayerNear = false;
 
@@ -19,7 +19,7 @@ public class TableInteraction : MonoBehaviour
         if (isPlayerNear && Input.GetKeyDown(KeyCode.A))
         {
             craftingCanvas.gameObject.SetActive(true);
-            pressETextUI.SetActive(false); // Hide the prompt when interacting
+            pressETextUI.SetActive(false); 
         }
     }
 
