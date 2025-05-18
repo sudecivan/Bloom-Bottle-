@@ -15,8 +15,8 @@ public class ExperienceManager : MonoBehaviour
     public Slider xpBar;
     public TMP_Text xpText;
     public TMP_Text levelText;
-    public GameObject xpPopupPrefab; // Optional: popup prefab to show gained/lost XP
-    public Transform popupParent;    // Optional: where to spawn popups in UI
+    public GameObject xpPopupPrefab; 
+    public Transform popupParent;    
 
     private void Awake()
     {
@@ -59,7 +59,7 @@ public class ExperienceManager : MonoBehaviour
         {
             currentXP -= xpToNextLevel;
             currentLevel++;
-            xpToNextLevel = Mathf.RoundToInt(xpToNextLevel * 1.2f); // increase threshold by 20% per level
+            xpToNextLevel = Mathf.RoundToInt(xpToNextLevel * 1.2f); 
 
             Debug.Log($"Level Up! You are now level {currentLevel}");
         }
@@ -86,7 +86,7 @@ public class ExperienceManager : MonoBehaviour
             popupText.text = text;
             popupText.color = color;
 
-            Destroy(popup, 2f); // auto-destroy after 2 seconds
+            Destroy(popup, 2f); 
         }
     }
 }
