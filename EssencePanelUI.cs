@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class EssencePanelUI : MonoBehaviour
 {
     [Header("Prefab & Container")]
-    public GameObject essencePrefab; // Prefab that has EssenceDragItem + Image
-    public Transform container;      // Should have a GridLayoutGroup or similar
+    public GameObject essencePrefab; 
+    public Transform container;      
 
     [Header("Essences to Display")]
     public List<EssenceItem> availableEssences = new List<EssenceItem>();
@@ -24,13 +24,12 @@ public class EssencePanelUI : MonoBehaviour
 
     public void PopulateEssencePanel()
     {
-        // Clear previous UI items
         foreach (Transform child in container)
         {
             Destroy(child.gameObject);
         }
 
-        // Create new UI items
+       
         foreach (EssenceItem essence in availableEssences)
         {
             if (essence == null)
