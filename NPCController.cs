@@ -75,7 +75,7 @@ public class NPCController : MonoBehaviour
     }
 
     private void MoveToNextPoint()
-    {   Debug.LogError("çalışıyo");
+    {   
 
     if (currentPoint >= pathPoints.Count)
     {
@@ -129,7 +129,7 @@ public class NPCController : MonoBehaviour
   {  Debug.Log("Trigger entered by: " + other.name);
 
     if (!isLeaving && hasReachedStopPoint)
-    {   Debug.Log("olduuu");
+    {   
         talkPromptUI.SetActive(true);
         playerInRange = true;
     }
