@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 public class NPCController : MonoBehaviour
 {
-    public List<Transform> pathPoints;       // waypoints before reaching store
-    public Transform stopPoint;              // where conversation happens
-    public Transform disappearPoint;         // where they leave
+    public List<Transform> pathPoints;      
+    public Transform stopPoint;              
+    public Transform disappearPoint;
 
     public Animator animator;
     public ConversationManager conversationManager;
@@ -19,7 +19,7 @@ public class NPCController : MonoBehaviour
     private bool hasReachedStopPoint = false;
     private Action<NPCController> onFinishedCallback;
 
-    public GameObject talkPromptUI;  // assign in inspector
+    public GameObject talkPromptUI;  
     private bool playerInRange = false;
 
     void Awake()
@@ -37,7 +37,7 @@ public class NPCController : MonoBehaviour
     {   
         onFinishedCallback = onFinished;
         MoveToNextPoint();
-        SetWalking(true); // ensure walk when moving
+        SetWalking(true); 
         
     }
 
@@ -106,7 +106,7 @@ public class NPCController : MonoBehaviour
 
         conversationManager.StartConversation(this);
 
-        // Listen for end signal
+        
         conversationManager.OnConversationEnded += StartLeaving;
     }
 
