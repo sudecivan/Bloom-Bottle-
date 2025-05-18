@@ -5,16 +5,16 @@ using TMPro;
 
 public class ConversationManager : MonoBehaviour
 {
-    private List<InventoryItem> allItems;               // All available items
-    public InventoryManager inventoryManager;         // Your inventory system
-    public MoneyManager moneyManager;                 // Money manager
-    public ExperienceManager experienceManager;       // XP system
+    private List<InventoryItem> allItems;               
+    public InventoryManager inventoryManager;         
+    public MoneyManager moneyManager;                 
+    public ExperienceManager experienceManager;       
 
-    public GameObject twoOptionPanel;                 // Panel with 2 buttons
-    public GameObject threeOptionPanel;               // Panel with 3 buttons
+    public GameObject twoOptionPanel;                 
+    public GameObject threeOptionPanel;               
 
-    public Button optionA, optionB, optionC;          // For three-option case
-    public Button haveItButton, dontHaveButton;       // For two-option case
+    public Button optionA, optionB, optionC;          
+    public Button haveItButton, dontHaveButton;      
     public Text npcText1;
     public Text npcText2;
 
@@ -73,7 +73,7 @@ public class ConversationManager : MonoBehaviour
         twoOptionPanel.SetActive(false);
         threeOptionPanel.SetActive(true);
 
-        // Prepare options
+        
         List<InventoryItem> shuffledOptions = new List<InventoryItem>(allItems);
         shuffledOptions.Remove(currentItem);
         ShuffleList(shuffledOptions);
@@ -103,12 +103,12 @@ public class ConversationManager : MonoBehaviour
         {
             inventoryManager.RemoveItem(currentItem);
             moneyManager.SellItem(currentItem.sellPrice);
-            experienceManager.GainXP(10);  // Gain XP
+            experienceManager.GainXP(10);  
             ShowXPResultPopup(true);
         }
         else
         {
-            experienceManager.LoseXP(5);  // Lose XP
+            experienceManager.LoseXP(5); 
             ShowXPResultPopup(false);
         }
         EndConversation();
@@ -116,14 +116,14 @@ public class ConversationManager : MonoBehaviour
 
     void HandleDontHaveIt()
     {
-        experienceManager.LoseXP(5);  // Lose XP
+        experienceManager.LoseXP(5);  
         ShowXPResultPopup(false);
         EndConversation();
     }
 
     void HandleThreeOptionChoice(InventoryItem chosen)
     {
-        // Always sell (even if wrong)
+       
         inventoryManager.RemoveItem(chosen);
         moneyManager.SellItem(chosen.sellPrice);
 
@@ -152,7 +152,7 @@ public class ConversationManager : MonoBehaviour
     {
         int amount = gained ? 10 : -5;
         Debug.Log(gained ? $"+{amount} XP" : $"{amount} XP");
-        // Optional: connect this to a UI popup system
+        
     }
 
     void ShuffleList<T>(List<T> list)
